@@ -117,6 +117,7 @@
 <script>
   import Logo from '~/components/Logo.vue';
   import VuetifyLogo from '~/components/VuetifyLogo.vue';
+  import anime from 'animejs/lib/anime.es.js';
 
   export default {
     data: function() {
