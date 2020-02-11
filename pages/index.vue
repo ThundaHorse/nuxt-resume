@@ -62,7 +62,7 @@
     <v-row id="projects" align="center" justify="center">
       <v-col class="text-center" cols="12">
         <v-card
-          ripple="true"
+          :ripple="true"
           :light="idx % 2 !== 0"
           elevation="10"
           max-width="344"
