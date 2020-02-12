@@ -7,6 +7,7 @@
       fixed
       app
     >
+      <!-- Sites -->
       <v-list>
         <v-list-item
           v-for="(item, i) in items"
@@ -42,44 +43,44 @@
 </template>
 
 <script>
-  import VuetifyLogo from '../components/VuetifyLogo';
+import VuetifyLogo from '../components/VuetifyLogo';
 
-  export default {
-    components: {
-      VuetifyLogo
-    },
-    data() {
-      return {
-        clipped: false,
-        drawer: false,
-        fixed: false,
-        items: [
-          {
-            icon: '',
-            title: '',
-            to: ''
-          },
-          {
-            icon: 'mdi-apps',
-            title: 'Github',
-            to: 'https://www.github.com/ThundaHorse'
-          },
-          {
-            icon: 'mdi-apps',
-            title: 'LinkedIn',
-            to: 'https://www.linkedin.com/in/abrahamtkim/'
-          },
-          {
-            icon: 'mdi-chart-bubble',
-            title: 'Medium',
-            to: 'https://medium.com/@abekeeem'
-          }
-        ],
-        miniVariant: false,
-        right: true,
-        rightDrawer: false,
-        title: 'ABRAHAM KIM'
-      };
-    }
-  };
+export default {
+  components: {
+    VuetifyLogo
+  },
+  data() {
+    return {
+      clipped: false,
+      drawer: false,
+      fixed: false,
+      items: [
+        {
+          icon: '',
+          title: '',
+          to: ''
+        },
+        {
+          icon: 'mdi-apps',
+          title: 'Github',
+          to: 'https://www.github.com/ThundaHorse'
+        },
+        {
+          icon: 'mdi-apps',
+          title: 'LinkedIn',
+          to: 'https://www.linkedin.com/in/abrahamtkim/'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Medium',
+          to: 'https://medium.com/@abekeeem'
+        }
+      ],
+      miniVariant: false,
+      right: true,
+      rightDrawer: false,
+      title: 'ABRAHAM KIM'
+    };
+  }
+};
 </script>
