@@ -6,14 +6,15 @@
           v-anime="{
             targets: '.property-keyframes-demo .el',
             translateX: [{ value: [-100, 0], duration: 1000, delay: 200 }],
-            scaleX: [
-              { value: 2, duration: 200, delay: 200, easing: 'easeInSine' },
-              { value: 1, duration: 900 }
-            ],
             easing: 'easeOutSine(1, .5)',
             loop: false
           }"
         >
+          <img
+            src="../static/headshot-min.png"
+            alt="headshot"
+            style="height: 190px; width: 170px; border-radius: 50%; opacity: 0.8;"
+          />
           <h1 class="display-1 font-weight-regular mb-4">Hello there!</h1>
         </div>
         <div
