@@ -1,7 +1,8 @@
 <template>
   <div class="skills">
-    <v-row id="technologies" align="center" justify="center">
-      <v-col class="text-center" cols="12">
+    <v-row id="technologies">
+      <!-- <v-col class="text-center" cols="12"> -->
+      <v-col cols="12">
         <v-card class="mx-auto" max-width="500">
           <v-list>
             <v-list-item-group>
@@ -9,7 +10,7 @@
                 v-for="(item, i) in items"
                 :key="i"
                 v-anime="{
-                  translateX: [-150, 0],
+                  translateX: [-50, 0],
                   direction: 'alternate',
                   loop: false,
                   delay: function() {
@@ -21,7 +22,8 @@
                 }"
               >
                 <v-list-item-content>
-                  <v-list-item-title v-text="item"></v-list-item-title>
+                  <p class="font-weight-light">{{ item }}</p>
+                  <!-- <v-list-item-title v-text="item" /> -->
                 </v-list-item-content>
               </v-list-item>
             </v-list-item-group>
@@ -33,29 +35,29 @@
 </template>
 
 <script>
-export default {
-  data: function() {
-    return {
-      items: [
-        'JavaScript (ES6)',
-        'TypeScript',
-        'Vue JS',
-        'Angular JS',
-        'React JS',
-        'Ruby on Rails',
-        'RSpec',
-        'Ruby',
-        'SQL',
-        'HTML & CSS',
-        'SCSS/SASS',
-        'Node/Express JS',
-        'PHP',
-        'Laravel',
-        'Jest/Chai/Mocha'
-      ]
-    };
-  },
-  created: function() {},
-  methods: {}
-};
+  export default {
+    data: function() {
+      return {
+        items: [
+          'JavaScript (ES6)',
+          'TypeScript',
+          'Vue JS',
+          'Angular JS',
+          'React JS',
+          'Ruby on Rails',
+          'RSpec',
+          'Ruby',
+          'SQL',
+          'HTML & CSS',
+          'SCSS/SASS',
+          'Node/Express JS',
+          'PHP',
+          'Laravel',
+          'Jest/Chai/Mocha'
+        ]
+      };
+    },
+    created: function() {},
+    methods: {}
+  };
 </script>

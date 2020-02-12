@@ -4,11 +4,11 @@
       <v-row id="about-me" align="center" justify="center">
         <v-col class="text-center" cols="12">
           <h1 class="display-1 font-weight-regular mb-4">About me</h1>
-          <img
+          <!-- <v-img
             src="../../static/bigbear copy.png"
             alt="intro-pic"
             style="height: 200px; width: 200px; border-radius: 50%; float: left;"
-          />
+          /> -->
           <h4 class="subheading font-weight-regular">
             I'm a software engineer currently residing in Sunrise, FL originally
             from Atlanta, GA. I graduated from Georgia State University with a
@@ -27,11 +27,11 @@
 </template>
 
 <script>
-export default {
-  data: function() {
-    return {};
-  },
-  created: function() {},
-  methods: {}
-};
+  export default {
+    data: function() {
+      return {};
+    },
+    created: function() {},
+    methods: {}
+  };
 </script>
