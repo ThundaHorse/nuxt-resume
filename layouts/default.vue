@@ -9,7 +9,7 @@
     >
       <!-- Sites -->
       <v-list>
-        <v-list-item
+        <!-- <v-list-item
           v-for="(item, i) in items"
           :key="i"
           :href="item.to"
@@ -22,7 +22,34 @@
           <v-list-item-content>
             <v-list-item-title v-text="item.title" />
           </v-list-item-content>
+        </v-list-item> -->
+
+        <!-- Page Sections -->
+        <v-list-item @click.prevent="selectSection('intro')">
+          <v-list-item-action>
+            <v-icon>mdi-apps</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title v-text="'Intro'" />
+          </v-list-item-content>
         </v-list-item>
+        <v-list-item @click.prevent="selectSection('about')">
+          <v-list-item-action>
+            <v-icon>mdi-apps</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title v-text="'About'" />
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item @click.prevent="selectSection('projects')">
+          <v-list-item-action>
+            <v-icon>mdi-apps</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title v-text="'Projects'" />
+          </v-list-item-content>
+        </v-list-item>
+        <!-- Page Sections -->
       </v-list>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
@@ -33,7 +60,7 @@
     <v-content>
       <!-- <v-container pa-0> -->
       <v-container>
-        <nuxt />
+        <nuxt :selected="selectedSection" />
       </v-container>
     </v-content>
     <v-footer :fixed="fixed" app>
@@ -46,6 +73,7 @@
 import VuetifyLogo from '../components/VuetifyLogo';
 
 export default {
+  name: 'default',
   components: {
     VuetifyLogo
   },
@@ -79,8 +107,14 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'ABRAHAM KIM'
+      title: 'ABRAHAM KIM',
+      selectedSection: ''
     };
+  },
+  methods: {
+    selectSection(input) {
+      this.selectedSection = input;
+    }
   }
 };
 </script>
