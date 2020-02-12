@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about-me">
     <v-row id="about-me" align="center" justify="center">
       <v-col class="text-center" cols="12">
         <h1 class="display-1 font-weight-regular mb-4">About me</h1>
@@ -16,17 +16,11 @@
         </h4>
       </v-col>
     </v-row>
-    <Skills />
   </div>
 </template>
 
 <script>
-import Skills from '~/components/Skills.vue';
-
 export default {
-  components: {
-    Skills
-  },
   data: function() {
     return {};
   },

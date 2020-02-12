@@ -25,28 +25,34 @@
         </v-list-item> -->
 
         <!-- Page Sections -->
-        <v-list-item @click.prevent="selectSection('intro')">
+        <v-list-item>
           <v-list-item-action>
             <v-icon>mdi-apps</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="'Intro'" />
+            <nuxt-link to="/">
+              <v-list-item-title v-text="'Home'" />
+            </nuxt-link>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item @click.prevent="selectSection('about')">
+        <v-list-item>
           <v-list-item-action>
             <v-icon>mdi-apps</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="'About'" />
+            <nuxt-link to="/about">
+              <v-list-item-title v-text="'About Me'" />
+            </nuxt-link>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item @click.prevent="selectSection('projects')">
+        <v-list-item>
           <v-list-item-action>
             <v-icon>mdi-apps</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="'Projects'" />
+            <nuxt-link to="/projects">
+              <v-list-item-title v-text="'Projects'" />
+            </nuxt-link>
           </v-list-item-content>
         </v-list-item>
         <!-- Page Sections -->
@@ -60,7 +66,7 @@
     <v-content>
       <!-- <v-container pa-0> -->
       <v-container>
-        <nuxt :selected="selectedSection" />
+        <nuxt />
       </v-container>
     </v-content>
     <v-footer :fixed="fixed" app>
@@ -107,14 +113,9 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'ABRAHAM KIM',
-      selectedSection: ''
+      title: 'ABRAHAM KIM'
     };
   },
-  methods: {
-    selectSection(input) {
-      this.selectedSection = input;
-    }
-  }
+  methods: {}
 };
 </script>

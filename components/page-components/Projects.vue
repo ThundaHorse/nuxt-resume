@@ -1,55 +1,39 @@
 <template>
   <div class="projects">
-    <v-row id="projects" align="center" justify="center">
-      <v-col class="text-center" cols="12">
-        <v-card
-          :ripple="true"
-          :light="idx % 2 !== 0"
-          elevation="10"
-          max-width="344"
-          class="mx-auto"
+    <v-row align="center">
+      <v-item-group v-model="window" class="shrink mr-6" mandatory tag="v-flex">
+        <v-item
           v-for="(project, idx) in projects"
           :key="idx"
+          v-slot:default="{ active, toggle }"
         >
-          <v-list-item>
-            <!-- <v-list-item-avatar color="grey"></v-list-item-avatar> -->
-            <v-list-item-content>
-              <v-list-item-title class="headline">{{
-                project.name
-              }}</v-list-item-title>
-              <!-- <v-list-item-subtitle>by Kurt Wagner</v-list-item-subtitle> -->
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-img
-            src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg"
-            height="194"
-          ></v-img>
-
-          <v-card-text>
-            {{ project.desc }}
-          </v-card-text>
-
-          <v-card-actions>
-            <!-- <v-btn text color="deep-purple accent-4">
-              Read
+          <div>
+            <v-btn :input-value="active" icon @click="toggle">
+              <v-icon>mdi-record</v-icon>
             </v-btn>
-            <v-btn text color="deep-purple accent-4">
-              Bookmark
-            </v-btn> -->
-            <v-spacer></v-spacer>
-            <v-btn icon :href="project.url">
-              <v-hover>
-                <v-icon>mdi-heart</v-icon>
-              </v-hover>
-            </v-btn>
-            <v-btn icon>
-              <v-hover>
-                <v-icon>mdi-share-variant</v-icon>
-              </v-hover>
-            </v-btn>
-          </v-card-actions>
-        </v-card>
+          </div>
+        </v-item>
+      </v-item-group>
+      <v-col>
+        <v-window v-model="window" class="elevation-1" vertical>
+          <v-window-item v-for="(project, idx) in projects" :key="idx">
+            <v-card flat :ripple="true" :light="idx % 2 !== 0">
+              <v-card-text>
+                <v-row class="mb-4" align="center">
+                  <v-avatar color="grey" class="mr-4"></v-avatar>
+                  <strong class="title">{{ project.name }}</strong>
+                  <v-spacer></v-spacer>
+                  <v-btn icon>
+                    <v-icon>mdi-account</v-icon>
+                  </v-btn>
+                </v-row>
+                <p>
+                  {{ project.desc }}
+                </p>
+              </v-card-text>
+            </v-card>
+          </v-window-item>
+        </v-window>
       </v-col>
     </v-row>
   </div>
@@ -67,6 +51,12 @@ export default {
           url: 'https://www.github.com/ThundaHorse'
         },
         {
+          name: "Let's go to Disney2",
+          desc:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+          url: 'https://www.github.com/ThundaHorse'
+        },
+        {
           name: 'Tripper',
           desc:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
@@ -78,10 +68,14 @@ export default {
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
           url: 'https://www.github.com/ThundaHorse'
         }
-      ]
+      ],
+      length: 0,
+      window: 0
     };
   },
-  created: function() {},
+  created: function() {
+    this.length = this.projects.length;
+  },
   methods: {}
 };
 </script>
