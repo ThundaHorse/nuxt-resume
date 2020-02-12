@@ -5,7 +5,21 @@
         <v-card class="mx-auto" max-width="500">
           <v-list>
             <v-list-item-group>
-              <v-list-item v-for="(item, i) in items" :key="i">
+              <v-list-item
+                v-for="(item, i) in items"
+                :key="i"
+                v-anime="{
+                  translateX: [-150, 0],
+                  direction: 'alternate',
+                  loop: false,
+                  delay: function() {
+                    return i * 50;
+                  },
+                  endDelay: function() {
+                    return (items.length - i) * 200;
+                  }
+                }"
+              >
                 <v-list-item-content>
                   <v-list-item-title v-text="item"></v-list-item-title>
                 </v-list-item-content>
