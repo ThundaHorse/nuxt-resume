@@ -7,55 +7,18 @@
       fixed
       app
     >
-      <!-- Sites -->
-      <v-list>
-        <!-- <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :href="item.to"
-          router
-          exact
-        >
+      <!-- Page Sections -->
+      <v-list v-for="(item, idx) in items" :key="idx">
+        <v-list-item>
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item> -->
-
-        <!-- Page Sections -->
-        <v-list-item>
-          <v-list-item-action>
-            <v-icon>mdi-apps</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <nuxt-link to="/">
-              <v-list-item-title v-text="'Home'" />
+            <nuxt-link :to="item.to">
+              <v-list-item-title v-text="item.name" />
             </nuxt-link>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item>
-          <v-list-item-action>
-            <v-icon>mdi-apps</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <nuxt-link to="/about">
-              <v-list-item-title v-text="'About Me'" />
-            </nuxt-link>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-action>
-            <v-icon>mdi-apps</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <nuxt-link to="/projects">
-              <v-list-item-title v-text="'Projects'" />
-            </nuxt-link>
-          </v-list-item-content>
-        </v-list-item>
-        <!-- Page Sections -->
       </v-list>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
@@ -63,25 +26,27 @@
       <v-toolbar-title v-text="title" />
       <v-spacer />
     </v-app-bar>
+
+    <!-- Content -->
     <v-content>
       <!-- <v-container pa-0> -->
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
-    <v-footer :fixed="fixed" app>
-      <span><VuetifyLogo style="height: 25px; width: 25px;"/></span>
-    </v-footer>
+
+    <!-- Footer -->
+    <Footer />
   </v-app>
 </template>
 
 <script>
-import VuetifyLogo from '../components/VuetifyLogo';
+import Footer from '../components/layout-components/Footer.vue';
 
 export default {
   name: 'default',
   components: {
-    VuetifyLogo
+    Footer
   },
   data() {
     return {
@@ -90,10 +55,22 @@ export default {
       fixed: false,
       items: [
         {
-          icon: '',
-          title: '',
-          to: ''
+          icon: 'mdi-apps',
+          to: '/',
+          name: 'Home'
         },
+        {
+          icon: 'mdi-apps',
+          to: '/about',
+          name: 'About'
+        },
+        {
+          icon: 'mdi-apps',
+          to: '/projects',
+          name: 'Projects'
+        }
+      ],
+      socialLinks: [
         {
           icon: 'mdi-apps',
           title: 'Github',

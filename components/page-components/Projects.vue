@@ -1,41 +1,53 @@
 <template>
   <div class="projects">
-    <v-row align="center">
-      <v-item-group v-model="window" class="shrink mr-6" mandatory tag="v-flex">
-        <v-item
-          v-for="(project, idx) in projects"
-          :key="idx"
-          v-slot:default="{ active, toggle }"
+    <v-container>
+      <v-row align="center">
+        <v-item-group
+          v-model="window"
+          class="shrink mr-6"
+          mandatory
+          tag="v-flex"
         >
-          <div>
-            <v-btn :input-value="active" icon @click="toggle">
-              <v-icon>mdi-record</v-icon>
-            </v-btn>
-          </div>
-        </v-item>
-      </v-item-group>
-      <v-col>
-        <v-window v-model="window" class="elevation-1" vertical>
-          <v-window-item v-for="(project, idx) in projects" :key="idx">
-            <v-card flat :ripple="true" :light="idx % 2 !== 0">
-              <v-card-text>
-                <v-row class="mb-4" align="center">
-                  <v-avatar color="grey" class="mr-4"></v-avatar>
-                  <strong class="title">{{ project.name }}</strong>
-                  <v-spacer></v-spacer>
-                  <v-btn icon>
-                    <v-icon>mdi-account</v-icon>
-                  </v-btn>
-                </v-row>
-                <p>
-                  {{ project.desc }}
-                </p>
-              </v-card-text>
-            </v-card>
-          </v-window-item>
-        </v-window>
-      </v-col>
-    </v-row>
+          <v-item
+            v-for="(project, idx) in projects"
+            :key="idx"
+            v-slot:default="{ active, toggle }"
+          >
+            <div>
+              <v-btn :input-value="active" icon @click="toggle">
+                <v-icon>mdi-record</v-icon>
+              </v-btn>
+            </div>
+          </v-item>
+        </v-item-group>
+        <v-col>
+          <v-window v-model="window" class="elevation-1" vertical>
+            <v-window-item v-for="(project, idx) in projects" :key="idx">
+              <v-card
+                flat
+                :ripple="true"
+                :light="idx % 2 !== 0"
+                max-width="1000"
+              >
+                <v-card-text>
+                  <v-row class="mb-4" align="center">
+                    <v-avatar color="grey" class="mr-4"></v-avatar>
+                    <strong class="title">{{ project.name }}</strong>
+                    <v-spacer></v-spacer>
+                    <v-btn icon>
+                      <v-icon>mdi-account</v-icon>
+                    </v-btn>
+                  </v-row>
+                  <p>
+                    {{ project.desc }}
+                  </p>
+                </v-card-text>
+              </v-card>
+            </v-window-item>
+          </v-window>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
