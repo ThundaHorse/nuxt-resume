@@ -30,7 +30,7 @@
     <!-- Content -->
     <v-content>
       <!-- <v-container pa-0> -->
-      <v-container>
+      <v-container fill-height>
         <nuxt />
       </v-container>
     </v-content>
