@@ -6,28 +6,28 @@
         <div
           v-anime="{
             targets: '.property-keyframes-demo .el',
-            translateX: [{ value: [-100, 0], duration: 1000, delay: 200 }],
+            translateX: [{ value: [-100, 0], duration: 1000 }],
             easing: 'easeOutSine(1, .5)',
             loop: false
           }"
         >
-           <img
+          <img
             src="../static/headshot-min.png"
             alt="headshot"
             style="height: 190px; width: 170px; border-radius: 50%; opacity: 0.8;"
-          /> 
+          />
           <h1 class="display-1 font-weight-regular mb-4">Hello there!</h1>
         </div>
         <div
           v-anime="{
             targets: '.linear-easing-demo .el',
-            translateX: [100, 0],
+            translateX: [150, 0],
             direction: 'normal',
             loop: false,
             easing: 'linear'
           }"
         >
-          <h4 class="subheading font-weight-light">
+          <h4 class="blockquote" align="center" justify="center">
             My name is Abraham Kim. I put pieces of the web together. I'm a
             software engineer who crafts precise and aesthetically pleasing web
             apps. Exploring new languages and frameworks is what I enjoy among
