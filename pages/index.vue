@@ -11,11 +11,11 @@
             loop: false
           }"
         >
-          <!-- <v-img
+           <img
             src="../static/headshot-min.png"
             alt="headshot"
             style="height: 190px; width: 170px; border-radius: 50%; opacity: 0.8;"
-          /> -->
+          /> 
           <h1 class="display-1 font-weight-regular mb-4">Hello there!</h1>
         </div>
         <div
