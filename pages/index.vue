@@ -1,5 +1,4 @@
 <template>
-  <!-- <v-layout column justify-center align-center> -->
   <v-container fluid>
     <v-row align="center" justify="center">
       <v-col class="text-center" cols="12">
@@ -7,15 +6,16 @@
           v-anime="{
             targets: '.property-keyframes-demo .el',
             translateX: [{ value: [-100, 0], duration: 1000, delay: 200 }],
+            opacity: [{ value: [0, 1], duration: 1000, delay: 200 }],
             easing: 'easeOutSine(1, .5)',
             loop: false
           }"
         >
-          <!-- <v-img
+          <img
             src="../static/headshot-min.png"
             alt="headshot"
             style="height: 190px; width: 170px; border-radius: 50%; opacity: 0.8;"
-          /> -->
+          />
           <h1 class="display-1 font-weight-regular mb-4">Hello there!</h1>
         </div>
         <div
@@ -24,6 +24,7 @@
             translateX: [100, 0],
             direction: 'normal',
             loop: false,
+            opacity: [{ value: [0, 1], duration: 1000, delay: 200 }],
             easing: 'linear'
           }"
         >
@@ -39,18 +40,17 @@
       </v-col>
     </v-row>
   </v-container>
-  <!-- </v-layout> -->
 </template>
 
 <script>
-  import Logo from '~/components/Logo.vue';
-  import VuetifyLogo from '~/components/VuetifyLogo.vue';
+import Logo from '~/components/Logo.vue';
+import VuetifyLogo from '~/components/VuetifyLogo.vue';
 
-  export default {
-    name: 'index',
-    components: {},
-    data: function() {
-      return {};
-    }
-  };
+export default {
+  name: 'index',
+  components: {},
+  data: function() {
+    return {};
+  }
+};
 </script>
