@@ -42,7 +42,7 @@
                 loop: false
               }"
             >
-              <h4 class="blockquote font-weight-regular">
+              <h4 class="text-center font-weight-regular">
                 I'm a software engineer currently residing in Sunrise, FL
                 originally from Atlanta, GA. I graduated from Georgia State
                 University with a degree in Political Science which helped me
