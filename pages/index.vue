@@ -11,7 +11,7 @@
           thouroughly tested and fit to be scaled and maintained. Honing my
           skills to create efficient and concise code is my goal.
         </h4>
-      </v-col>
+      </v-col>      
     </v-row>
     <v-row id="about-me" align="center" justify="center">
       <v-col class="text-center" cols="12">
@@ -61,29 +61,27 @@
     </v-row>
     <v-row id="projects" align="center" justify="center">
       <v-col class="text-center" cols="12">
-        <v-card
-          ripple="true"
-          :light="idx % 2 !== 0"
-          elevation="10"
-          max-width="344"
-          class="mx-auto"
-          v-for="(project, idx) in projects"
-          :key="idx"
-        >
+        <v-card ripple="true"
+                :light="idx % 2 !== 0"
+                elevation="10"
+                max-width="344"
+                class="mx-auto"
+                v-for="(project, idx) in projects"
+                :key="idx">
           <v-list-item>
             <!-- <v-list-item-avatar color="grey"></v-list-item-avatar> -->
             <v-list-item-content>
-              <v-list-item-title class="headline">{{
+              <v-list-item-title class="headline">
+                {{
                 project.name
-              }}</v-list-item-title>
+                }}
+              </v-list-item-title>
               <!-- <v-list-item-subtitle>by Kurt Wagner</v-list-item-subtitle> -->
             </v-list-item-content>
           </v-list-item>
 
-          <v-img
-            src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg"
-            height="194"
-          ></v-img>
+          <v-img src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg"
+                 height="194"></v-img>
 
           <v-card-text>
             {{ project.desc }}
@@ -115,11 +113,8 @@
 </template>
 
 <script>
-  import Logo from '~/components/Logo.vue';
-  import VuetifyLogo from '~/components/VuetifyLogo.vue';
-
   export default {
-    data: function() {
+    data: function () {
       return {
         message:
           'Sawyer and Associates, pending civil matter, 866-515-0247, Sang Myung Kim, answer any questions he/she asks, Ref num: 405060',
@@ -143,7 +138,7 @@
             url: 'https://www.github.com/ThundaHorse'
           }
         ]
-      };
+      }
     }
-  };
+  }
 </script>
