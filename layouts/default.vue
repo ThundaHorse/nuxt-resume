@@ -14,7 +14,7 @@
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <nuxt-link :to="item.to">
+            <nuxt-link :to="item.to" style="color: white;">
               <v-list-item-title v-text="item.name" />
             </nuxt-link>
           </v-list-item-content>
@@ -28,9 +28,9 @@
     </v-app-bar>
 
     <!-- Content -->
-    <v-content>
+    <v-content id="main">
       <!-- <v-container pa-0> -->
-      <v-container>
+      <v-container fill-height>
         <nuxt />
       </v-container>
     </v-content>
@@ -39,6 +39,11 @@
     <Footer />
   </v-app>
 </template>
+
+<style>
+#main {
+}
+</style>
 
 <script>
 import Footer from '../components/layout-components/Footer.vue';
@@ -55,17 +60,17 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-home',
           to: '/',
           name: 'Home'
         },
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-information-outline',
           to: '/about',
           name: 'About'
         },
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-toolbox-outline',
           to: '/projects',
           name: 'Projects'
         }
