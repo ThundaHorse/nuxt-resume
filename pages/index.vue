@@ -50,27 +50,13 @@
           <v-card-actions>
             <v-row>
               <v-col>
-                <v-btn
-                  color="orange accent-2"
-                  text
-                  href="https://www.github.com/ThundaHorse"
-                >
-                  Github
-                </v-btn>
+                <v-btn color="orange accent-2" text href="https://www.github.com/ThundaHorse">Github</v-btn>
                 <v-btn
                   color="light-blue darken-1"
                   text
                   href="https://www.linkedin.com/in/abrahamtkim/"
-                >
-                  LinkedIn
-                </v-btn>
-                <v-btn
-                  color="light-green accent-3"
-                  text
-                  href="https://medium.com/@abekeeem"
-                >
-                  Medium
-                </v-btn>
+                >LinkedIn</v-btn>
+                <v-btn color="light-green accent-3" text href="https://medium.com/@abekeeem">Medium</v-btn>
               </v-col>
             </v-row>
           </v-card-actions>
@@ -81,20 +67,23 @@
 </template>
 
 <style>
-#intro {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px;
-}
+  #intro {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px;
+    background-color: rgba(126, 125, 125, 0.16);
+    border-radius: 25px;
+    margin-top: 15px;
+  }
 </style>
 
 <script>
-import Logo from '~/components/Logo.vue';
-import VuetifyLogo from '~/components/VuetifyLogo.vue';
+  import Logo from '~/components/Logo.vue';
+  import VuetifyLogo from '~/components/VuetifyLogo.vue';
 
-export default {
-  name: 'index',
-  components: {},
-  data: function() {
-    return {};
-  }
-};
+  export default {
+    name: 'index',
+    components: {},
+    data: function() {
+      return {};
+    }
+  };
 </script>

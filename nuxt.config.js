@@ -18,7 +18,14 @@ export default {
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    style: [{ margin: '0;', padding: '0;' }]
+    style: [{ margin: '0;', padding: '0;' }],
+    link: [
+      {
+        href:
+          'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap',
+        rel: 'stylesheet'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
