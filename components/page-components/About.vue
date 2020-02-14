@@ -1,6 +1,6 @@
 <template>
   <div class="about-me">
-    <v-card class="mx-auto" max-width="600" shaped="true">
+    <v-card class="mx-auto" max-width="600" :shaped="true">
       <div
         v-anime="{
           translateX: [{ value: [-100, 0], duration: 1000, delay: 200 }],
@@ -13,7 +13,7 @@
         <img
           src="../../static/bigbear copy.png"
           alt="intro-pic"
-          style="height: 250px; width: 250px; border-radius: 50%;"
+          style="height: 230px; width: 220px; border-radius: 50%; opacity: 0.8; margin-top: 15px;"
         />
       </div>
       <v-spacer />
@@ -30,9 +30,7 @@
                 loop: false
               }"
             >
-              <h1 class="display-1 text-center font-weight-regular">
-                About me
-              </h1>
+              <h1 class="display-1 text-center font-weight-regular">About me</h1>
             </div>
             <div
               v-anime="{
@@ -47,8 +45,11 @@
                 originally from Atlanta, GA. I graduated from Georgia State
                 University with a degree in Political Science which helped me
                 understand how to manipulate data at a fundamental level. During
-                my undergraduated studies I started working for Apple and after
-                graduating, I became a Senior Advisor for AppleCare, with Apple
+                my undergraduated studies I started working for Apple and shortly after
+                graduating became a Senior Advisor for AppleCare.
+              </h4>
+              <h4 class="text-center font-weight-regular">
+                With Apple
                 I learned how to always be open to new information as well as
                 never settling with what I know, because there is always new
                 information to learn! I was always intruigued by software
@@ -61,25 +62,23 @@
         </v-row>
       </v-container>
       <v-card-actions>
-        <v-btn text color="deep-purple accent-4">
-          Learn More
-        </v-btn>
+        <v-btn text color="deep-purple accent-4">Learn More</v-btn>
       </v-card-actions>
     </v-card>
   </div>
 </template>
 
 <script>
-import Skills from './Skills.vue';
+  import Skills from './Skills.vue';
 
-export default {
-  components: {
-    Skills
-  },
-  data: function() {
-    return {};
-  },
-  created: function() {},
-  methods: {}
-};
+  export default {
+    components: {
+      Skills
+    },
+    data: function() {
+      return {};
+    },
+    created: function() {},
+    methods: {}
+  };
 </script>

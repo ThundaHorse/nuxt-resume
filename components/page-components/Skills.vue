@@ -11,7 +11,7 @@
       <v-card class="mx-auto text-center" max-width="600">
         <v-row>
           <v-col>
-            <v-list :dense="dense">
+            <v-list :dense="true">
               <v-list-item-group>
                 <v-list-item v-for="(item, i) in items.slice(0, 4)" :key="i">
                   <v-list-item-content>
@@ -22,7 +22,7 @@
             </v-list>
           </v-col>
           <v-col>
-            <v-list :dense="dense">
+            <v-list :dense="true">
               <v-list-item-group>
                 <v-list-item v-for="(item, i) in items.slice(5, 9)" :key="i">
                   <v-list-item-content>
@@ -33,7 +33,7 @@
             </v-list>
           </v-col>
           <v-col>
-            <v-list :dense="dense">
+            <v-list :dense="true">
               <v-list-item-group>
                 <v-list-item v-for="(item, i) in items.slice(10, 15)" :key="i">
                   <v-list-item-content>
@@ -50,29 +50,29 @@
 </template>
 
 <script>
-export default {
-  data: function() {
-    return {
-      items: [
-        'JavaScript (ES6)',
-        'TypeScript',
-        'Vue JS',
-        'Angular JS',
-        'React JS',
-        'Ruby on Rails',
-        'RSpec',
-        'Ruby',
-        'SQL',
-        'HTML & CSS',
-        'SCSS/SASS',
-        'Node/Express JS',
-        'PHP/Laravel',
+  export default {
+    data: function() {
+      return {
+        items: [
+          'JavaScript (ES6)',
+          'TypeScript',
+          'Vue JS',
+          'Angular JS',
+          'React JS',
+          'Ruby on Rails',
+          'RSpec',
+          'Ruby',
+          'SQL',
+          'HTML & CSS',
+          'SCSS/SASS',
+          'Node/Express JS',
+          'PHP/Laravel',
 
-        'Jest/Chai/Mocha'
-      ]
-    };
-  },
-  created: function() {},
-  methods: {}
-};
+          'Jest/Chai/Mocha'
+        ]
+      };
+    },
+    created: function() {},
+    methods: {}
+  };
 </script>
