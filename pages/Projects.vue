@@ -9,24 +9,24 @@
 </template>
 
 <style>
-.projects {
-  width: 100%;
-}
+  .projects {
+    width: 100%;
+  }
 </style>
 
 <script>
-import Projects from '~/components/page-components/Projects.vue';
-import Skills from '~/components/page-components/Skills.vue';
+  import Projects from '~/components/page-components/Projects.vue';
+  import Skills from '~/components/page-components/Skills.vue';
 
-export default {
-  components: {
-    Projects,
-    Skills
-  },
-  data: function() {
-    return {};
-  },
-  created: function() {},
-  methods: {}
-};
+  export default {
+    components: {
+      Projects,
+      Skills
+    },
+    data: function() {
+      return {};
+    },
+    created: function() {},
+    methods: {}
+  };
 </script>

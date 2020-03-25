@@ -50,13 +50,24 @@
           <v-card-actions>
             <v-row>
               <v-col>
-                <v-btn color="orange accent-2" text href="https://www.github.com/ThundaHorse">Github</v-btn>
+                <v-btn
+                  color="orange accent-2"
+                  text
+                  href="https://www.github.com/ThundaHorse"
+                  >Github</v-btn
+                >
                 <v-btn
                   color="light-blue darken-1"
                   text
                   href="https://www.linkedin.com/in/abrahamtkim/"
-                >LinkedIn</v-btn>
-                <v-btn color="light-green accent-3" text href="https://medium.com/@abekeeem">Medium</v-btn>
+                  >LinkedIn</v-btn
+                >
+                <v-btn
+                  color="light-green accent-3"
+                  text
+                  href="https://medium.com/@abekeeem"
+                  >Medium</v-btn
+                >
               </v-col>
             </v-row>
           </v-card-actions>

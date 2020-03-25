@@ -2,16 +2,25 @@
   <div
     class="projects"
     v-anime="{
-        translateX: [{ value: [100, 0], duration: 1000, delay: 200 }],
-        opacity: [{ value: [0, 1], duration: 1000, delay: 200 }],
-        easing: 'easeOutSine(1, .5)',
-        loop: false
-      }"
+      translateX: [{ value: [100, 0], duration: 1000, delay: 200 }],
+      opacity: [{ value: [0, 1], duration: 1000, delay: 200 }],
+      easing: 'easeOutSine(1, .5)',
+      loop: false
+    }"
   >
     <v-container>
       <v-row align="center">
-        <v-item-group v-model="window" class="shrink mr-6" mandatory tag="v-flex">
-          <v-item v-for="(project, idx) in projects" :key="idx" v-slot:default="{ active, toggle }">
+        <v-item-group
+          v-model="window"
+          class="shrink mr-6"
+          mandatory
+          tag="v-flex"
+        >
+          <v-item
+            v-for="(project, idx) in projects"
+            :key="idx"
+            v-slot:default="{ active, toggle }"
+          >
             <div>
               <v-btn :input-value="active" icon @click="toggle">
                 <v-icon>mdi-record</v-icon>

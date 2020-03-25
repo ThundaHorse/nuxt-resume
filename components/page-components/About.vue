@@ -30,7 +30,9 @@
                 loop: false
               }"
             >
-              <h1 class="display-1 text-center font-weight-regular">About me</h1>
+              <h1 class="display-1 text-center font-weight-regular">
+                About me
+              </h1>
             </div>
             <div
               v-anime="{
@@ -45,14 +47,13 @@
                 originally from Atlanta, GA. I graduated from Georgia State
                 University with a degree in Political Science which helped me
                 understand how to manipulate data at a fundamental level. During
-                my undergraduated studies I started working for Apple and shortly after
-                graduating became a Senior Advisor for AppleCare.
+                my undergraduated studies I started working for Apple and
+                shortly after graduating became a Senior Advisor for AppleCare.
               </h4>
               <h4 class="text-center font-weight-regular">
-                With Apple
-                I learned how to always be open to new information as well as
-                never settling with what I know, because there is always new
-                information to learn! I was always intruigued by software
+                With Apple I learned how to always be open to new information as
+                well as never settling with what I know, because there is always
+                new information to learn! I was always intruigued by software
                 development and taught myself Javascript and Ruby throughout my
                 undergraduate studies. In 2019 I decided to attend Actualize
                 Coding Bootcamp in Chicago, IL to pursue my passion.

@@ -7,9 +7,7 @@
           <v-col cols="auto">
             <About />
           </v-col>
-          <v-col cols="auto" class="mr-auto">
-            <!-- <Skills /> -->
-          </v-col>
+          <v-col cols="auto" class="mr-auto"></v-col>
         </v-row>
       </v-layout>
     </v-container>
