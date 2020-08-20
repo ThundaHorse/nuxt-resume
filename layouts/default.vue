@@ -1,6 +1,12 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app>
+    <v-navigation-drawer
+      v-model="drawer"
+      :mini-variant="miniVariant"
+      :clipped="clipped"
+      fixed
+      app
+    >
       <!-- Page Sections -->
       <v-list v-for="(item, idx) in items" :key="idx">
         <v-list-item>
@@ -37,7 +43,15 @@
 <style>
   #main {
     font-family: 'Open Sans', sans-serif;
-    background-color: rgb(53, 53, 53);
+    background: rgb(13, 13, 13);
+    background: linear-gradient(
+      32deg,
+      rgba(13, 13, 13, 1) 0%,
+      rgba(30, 40, 39, 1) 35%,
+      rgba(25, 45, 40, 1) 62%,
+      rgba(17, 51, 43, 1) 84%,
+      rgba(13, 37, 30, 1) 100%
+    );
   }
 </style>
 
@@ -47,9 +61,9 @@
   export default {
     name: 'default',
     components: {
-      Footer
+      Footer,
     },
-    mounted: function() {
+    mounted: function () {
       this.$nextTick(() => {
         this.$nuxt.$loading.start();
 
@@ -69,42 +83,42 @@
           {
             icon: 'mdi-home',
             to: '/',
-            name: 'Home'
+            name: 'Home',
           },
           {
             icon: 'mdi-information-outline',
             to: '/about',
-            name: 'About'
+            name: 'About',
           },
           {
             icon: 'mdi-toolbox-outline',
             to: '/projects',
-            name: 'Projects'
-          }
+            name: 'Projects',
+          },
         ],
         socialLinks: [
           {
             icon: 'mdi-apps',
             title: 'Github',
-            to: 'https://www.github.com/ThundaHorse'
+            to: 'https://www.github.com/ThundaHorse',
           },
           {
             icon: 'mdi-apps',
             title: 'LinkedIn',
-            to: 'https://www.linkedin.com/in/abrahamtkim/'
+            to: 'https://www.linkedin.com/in/abrahamtkim/',
           },
           {
             icon: 'mdi-chart-bubble',
             title: 'Medium',
-            to: 'https://medium.com/@abekeeem'
-          }
+            to: 'https://medium.com/@abekeeem',
+          },
         ],
         miniVariant: false,
         right: true,
         rightDrawer: false,
-        title: 'ABRAHAM KIM'
+        title: 'ABRAHAM KIM',
       };
     },
-    methods: {}
+    methods: {},
   };
 </script>
