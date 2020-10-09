@@ -77,15 +77,17 @@
           <div class="py-12"></div>
 
           <v-container class="text-center">
-            <v-btn
-              class="align-self-end"
-              fab
-              small
-              outlined
-              @click="$vuetify.goTo('#hero')"
-            >
-              <v-icon>mdi-chevron-double-up</v-icon>
-            </v-btn>
+            <div v-if="!isMobile">
+              <v-btn
+                class="align-self-end"
+                fab
+                small
+                outlined
+                @click="$vuetify.goTo('#hero')"
+              >
+                <v-icon>mdi-chevron-double-up</v-icon>
+              </v-btn>
+            </div>
 
             <h2 class="display-2 mt-4 font-weight-bold mb-3">ABOUT ME</h2>
 
@@ -151,6 +153,7 @@
               </v-row>
 
               <v-btn
+                v-if="!isMobile"
                 class="align-self-end"
                 fab
                 outlined
@@ -174,15 +177,17 @@
           <div class="py-12"></div>
 
           <v-container class="text-center">
-            <v-btn
-              class="align-self-end"
-              fab
-              small
-              outlined
-              @click="$vuetify.goTo('#about-me')"
-            >
-              <v-icon>mdi-chevron-double-up</v-icon>
-            </v-btn>
+            <div v-if="!isMobile">
+              <v-btn
+                class="align-self-end"
+                fab
+                small
+                outlined
+                @click="$vuetify.goTo('#about-me')"
+              >
+                <v-icon>mdi-chevron-double-up</v-icon>
+              </v-btn>
+            </div>
 
             <h2 class="display-2 mt-4 font-weight-bold mb-3">PROJECTS</h2>
 
@@ -267,6 +272,7 @@
             </v-row>
 
             <v-btn
+              v-if="!isMobile"
               class="align-self-end mt-4"
               fab
               small
@@ -291,15 +297,17 @@
           <div class="py-6"></div>
 
           <v-container class="text-center">
-            <v-btn
-              class="align-self-end"
-              fab
-              small
-              outlined
-              @click="$vuetify.goTo('#projects')"
-            >
-              <v-icon>mdi-chevron-double-up</v-icon>
-            </v-btn>
+            <div v-if="!isMobile">
+              <v-btn
+                class="align-self-end"
+                fab
+                small
+                outlined
+                @click="$vuetify.goTo('#projects')"
+              >
+                <v-icon>mdi-chevron-double-up</v-icon>
+              </v-btn>
+            </div>
 
             <h2 class="display-2 mt-4 font-weight-bold mb-3 text-uppercase text-center">Blog</h2>
 
@@ -345,6 +353,7 @@
             </v-row>
 
             <v-btn
+              v-if="!isMobile"
               class="align-self-end"
               fab
               small
@@ -363,11 +372,22 @@
 
       <section id="stats">
         <v-parallax
-          :height="$vuetify.breakpoint.smAndDown ? 700 : 500"
+          :height="$vuetify.breakpoint.smAndDown ? 700 : 600"
           src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
         >
-          <v-container>
-            <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Skills</h2>
+          <v-container class="skills-area text-center">
+            <div v-if="!isMobile">
+              <v-btn
+                class="align-self-end"
+                fab
+                small
+                outlined
+                @click="$vuetify.goTo('#blog')"
+              >
+                <v-icon>mdi-chevron-double-up</v-icon>
+              </v-btn>
+            </div>
+            <h2 class="display-2 font-weight-bold mt-3 mb-3 text-uppercase text-center">Skills</h2>
 
             <v-responsive
               class="mx-auto mb-12"
@@ -624,11 +644,31 @@
             color: "lime accent-3"
           }
         ],
-        fab: false
+        fab: false,
+        isMobile: false
       }
     },
     created: function() {
       this.length = this.projects.length;
+    },
+    computed: {
+      windowWidth() {
+        if (process.client) {
+          return window.innerWidth;
+        } else {
+          return null;
+        }
+      }
+    },
+    mounted () {
+      this.onResize()
+
+      window.addEventListener('resize', this.onResize, { passive: true })
+    },
+    beforeDestroy () {
+      if (typeof window === 'undefined') return
+
+      window.removeEventListener('resize', this.onResize, { passive: true })
     },
     methods: {
       onScroll (e) {
@@ -636,6 +676,11 @@
         const top = window.pageYOffset ||   e.target.scrollTop || 0
         this.fab = top > 20
       },
+
+      onResize () {
+        this.isMobile = window.innerWidth < 600
+      },
+
       toTop () {
         this.$vuetify.goTo(0)
       }
@@ -651,5 +696,11 @@
     background-attachment: fixed;
     background-size: cover;
     background-position: bottom -100px left 100px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .skills-area {
+      overflow: scroll;
+    }
   }
 </style>
