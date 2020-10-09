@@ -1,49 +1,17 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <!-- Page Sections -->
-      <v-list v-for="(item, idx) in items" :key="idx">
-        <v-list-item>
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <nuxt-link :to="item.to" style="color: white;">
-              <v-list-item-title v-text="item.name" />
-            </nuxt-link>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-    </v-app-bar>
-
     <!-- Content -->
     <v-content id="main">
       <!-- <v-container pa-0> -->
-      <v-container fill-height>
+      <v-content fill-height>
         <nuxt />
-      </v-container>
+      </v-content>
     </v-content>
 
     <!-- Footer -->
     <Footer />
   </v-app>
 </template>
-
-<style>
-#main {
-}
-</style>
 
 <script>
 import Footer from '../components/layout-components/Footer.vue';
@@ -55,9 +23,6 @@ export default {
   },
   data() {
     return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
       items: [
         {
           icon: 'mdi-home',
@@ -73,6 +38,11 @@ export default {
           icon: 'mdi-toolbox-outline',
           to: '/projects',
           name: 'Projects'
+        },
+        {
+          icon: 'mdi-home',
+          to: '/home',
+          name: 'Home'
         }
       ],
       socialLinks: [
@@ -93,11 +63,11 @@ export default {
         }
       ],
       miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'ABRAHAM KIM'
+      title: 'AK'
     };
   },
   methods: {}
 };
 </script>
+
+<style></style>
