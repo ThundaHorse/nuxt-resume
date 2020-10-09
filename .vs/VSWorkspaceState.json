@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+<<<<<<< HEAD
     "\\pages"
+=======
+    "\\components",
+    "\\pages",
+    "\\static"
+>>>>>>> f0bec8e783ae9dc6447aed11434e82c8358f5f42
   ],
   "SelectedNode": "\\pages\\index.vue",
   "PreviewInSolutionExplorer": false

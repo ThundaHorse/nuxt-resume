@@ -71,7 +71,8 @@
       <section id="about-me">
         <v-img
           :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
-          :src="wallpapers.about.src"
+          src=""
+          class="about-wallpaper"
         >
           <div class="py-12"></div>
 
@@ -168,6 +169,7 @@
         <v-img
           :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
           src=""
+          class="projects-wallpaper"
         >
           <div class="py-12"></div>
 
@@ -284,7 +286,7 @@
       <section id="blog">
         <v-img
           :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
-          :src="wallpapers.about.src"
+          src=""
         >
           <div class="py-6"></div>
 
@@ -487,8 +489,16 @@
             alt: "Hero"
           },
           about: {
-            src: require("@/static/aboutWallpaper.jpg"),
+            src: require("@/static/aboutWallpaper.png"),
             alt: "About"
+          },
+          blog: {
+            // src: require(""),
+            alt: "Blog"
+          },
+          stats: {
+            // src: require(""),
+            alt: "Stats"
           }
         },
         articles: [
@@ -632,3 +642,14 @@
     }
   }
 </script>
+
+<style>
+  .projects-wallpaper {
+    background: rgba(0, 0, 0, .65) url('../static/aboutWallpaper.png');
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: bottom -100px left 100px;
+  }
+</style>

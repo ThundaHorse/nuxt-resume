@@ -6,8 +6,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    title: 'Abraham T Kim',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -18,7 +17,14 @@ export default {
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    style: [{ margin: '0;', padding: '0;' }]
+    style: [{ margin: '0;', padding: '0;' }],
+    link: [
+      {
+        href:
+          'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap',
+        rel: 'stylesheet'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
