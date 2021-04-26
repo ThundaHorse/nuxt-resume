@@ -368,7 +368,7 @@
       <section id="stats">
         <v-parallax
           :height="$vuetify.breakpoint.smAndDown ? 700 : 600"
-          src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+          :src="require('@/static/skillsbackground-min.jpg')"
         >
           <v-container class="skills-area text-center">
             <div v-if="!isMobile">
