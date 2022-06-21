@@ -70,7 +70,7 @@
     <section id="about-me">
       <v-img
         :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
-        src=""
+        :src="wallpapers.about.src"
         class="about-wallpaper"
       >
         <div class="py-12"></div>
@@ -113,9 +113,11 @@
             tricks to optimize my work you can often find me at the MMA gym
             continuing my MMA training! Or if I'm feeling like relaxing, playing
             guitar with my cat 🐱.
+            <br />
+            Currently, I am at StateFarm as a Software Engineer!
           </v-responsive>
 
-          <v-avatar class="elevation-12 mb-12" size="128">
+          <v-avatar class="mb-12 about-selfie" size="128">
             <v-img :src="abeSelfie.src" :alt="abeSelfie.alt" />
           </v-avatar>
 
@@ -280,8 +282,6 @@
       </v-img>
     </section>
 
-    <v-divider class="mx-4" />
-
     <section id="blog">
       <v-img
         :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
@@ -366,131 +366,49 @@
       </v-img>
     </section>
 
-    <v-divider class="mx-4" />
-
     <section id="stats">
-      <v-parallax
-        :height="$vuetify.breakpoint.smAndDown ? 700 : 600"
-        src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-      >
-        <v-container class="skills-area text-center">
-          <div v-if="!isMobile">
-            <v-btn
-              class="align-self-end"
-              fab
-              small
-              outlined
-              @click="$vuetify.goTo('#blog')"
-            >
-              <v-icon>mdi-chevron-double-up</v-icon>
-            </v-btn>
-          </div>
-          <h2
-            class="display-2 font-weight-bold mt-3 mb-3 text-uppercase text-center"
-          >
-            Skills
-          </h2>
-
-          <v-responsive class="mx-auto mb-12" width="56">
-            <v-divider class="mb-1"></v-divider>
-
-            <v-divider></v-divider>
-          </v-responsive>
-
-          <v-row class="mx-auto">
-            <v-col v-for="(tool, idx) of tools" :key="idx" cols="12" md="3">
-              <div class="text-center">
-                <v-progress-circular
-                  :value="tool.val"
-                  :color="tool.color"
-                  size="70"
-                  width="7"
-                />
-                <div
-                  class="title font-weight-regular text-uppercase"
-                  v-text="tool.name"
-                ></div>
-              </div>
-            </v-col>
-          </v-row>
-        </v-container>
-      </v-parallax>
-    </section>
-
-    <v-divider class="mx-4" />
-
-    <!-- <v-sheet
-        id="contact"
-        color="#333333"
-        dark
-        tag="section"
-        tile
-      >
-        <div class="py-12"></div>
-
-        <v-container>
-          <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Contact Me</h2>
-
-          <v-responsive
-            class="mx-auto mb-12"
-            width="56"
-          >
-            <v-divider class="mb-1"></v-divider>
-
-            <v-divider></v-divider>
-          </v-responsive>
-
-          <v-theme-provider light>
-            <v-row>
-              <v-col cols="12">
-                <v-text-field
-                  flat
-                  label="Name*"
-                  solo
-                ></v-text-field>
-              </v-col>
-
-              <v-col cols="12">
-                <v-text-field
-                  flat
-                  label="Email*"
-                  solo
-                ></v-text-field>
-              </v-col>
-
-              <v-col cols="12">
-                <v-text-field
-                  flat
-                  label="Subject*"
-                  solo
-                ></v-text-field>
-              </v-col>
-
-              <v-col cols="12">
-                <v-textarea
-                  flat
-                  label="Message*"
-                  solo
-                ></v-textarea>
-              </v-col>
-
-              <v-col
-                class="mx-auto"
-                cols="auto"
-              >
+      <v-container class="skills-area text-center">
+        <v-row class="mx-auto">
+          <v-col cols="12">
+            <div class="skills-intro">
+              <div v-if="!isMobile">
                 <v-btn
-                  color="accent"
-                  x-large
+                  class="align-self-end"
+                  fab
+                  small
+                  outlined
+                  @click="$vuetify.goTo('#blog')"
                 >
-                  Submit
+                  <v-icon>mdi-chevron-double-up</v-icon>
                 </v-btn>
-              </v-col>
-            </v-row>
-          </v-theme-provider>
-        </v-container>
+              </div>
+              <h2
+                class="display-2 font-weight-bold mt-3 mb-3 text-uppercase text-center"
+              >
+                Skills
+              </h2>
+            </div>
+          </v-col>
+        </v-row>
 
-        <div class="py-12"></div>
-      </v-sheet> -->
+        <v-row class="mx-auto skills-display">
+          <v-col v-for="(tool, idx) of tools" :key="idx" cols="12" md="3">
+            <div class="text-center">
+              <v-progress-circular
+                :value="tool.val"
+                :color="tool.color"
+                size="70"
+                width="7"
+              />
+              <div
+                class="title font-weight-regular text-uppercase"
+                v-text="tool.name"
+              ></div>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
   </div>
 </template>
 
@@ -499,16 +417,16 @@
     data() {
       return {
         abeSelfie: {
-          src: require('@/static/abeBayern.jpg'),
+          src: require('@/static/abeBayern.webp'),
           alt: 'Abe Selfie'
         },
         wallpapers: {
           hero: {
-            src: require('@/static/heroWallpaper.jpg'),
+            src: require('@/static/heroWallpaper.webp'),
             alt: 'Hero'
           },
           about: {
-            src: require('@/static/aboutWallpaper.png'),
+            src: require('@/static/about-wall.webp'),
             alt: 'About'
           },
           blog: {
@@ -548,6 +466,13 @@
         ],
         projects: [
           {
+            name: 'Follow the Nerd',
+            desc:
+              'Professional site completed as a freelance project. Utilizing React JS along with Google Calendar API integration as well as Google review data. Migrated from PorkBun to a faster, smoother, and optimized web app. Services included scheduling appintments and fetching real time business review data and displaying as the client saw fit. In addition to utilizing React hooks and acting as the SME, advised client on functionality and advised in areas where ambiguity was present. Assisted client in optimizing SEO and registering business with Google. Deployed site via Netlify and assisted client in registering custom URL for business needs.',
+            url: 'https://followthenerd.com/',
+            src: require('@/static/superhero-about-us.svg')
+          },
+          {
             name: 'Our Daily Memes',
             desc:
               'Users can sign up for accounts or browser without an account. Users can post memes and a short description of their meme. Images are stored in AWS. The back-end is built with Ruby on Rails and a Vue.JS Front-end. Each post has individual likes/dislikes and comments. Users can comment on a post and see their comments in real-time.',
@@ -575,13 +500,6 @@
               'A user can choose two cards and if they match, they stay unflipped and your score goes up! Vuex is used to maintain state of child components and update when matches are made.',
             url: 'https://jovial-hypatia-d2fcbc.netlify.app/',
             src: require('@/static/vuex.png')
-          },
-          {
-            name: 'React Todo Manager',
-            desc:
-              'An app that takes down tasks to be completed and has options to remove tasks or mark as completed. A Rails back-end deployed with Heroku acts as the endpoints for the front-end built with React.',
-            url: 'https://quizzical-hodgkin-98cdb0.netlify.app/',
-            src: require('@/static/reactTodo.png')
           }
         ],
         length: 0,
@@ -594,17 +512,17 @@
           },
           {
             name: 'React',
-            val: '70',
+            val: '85',
             color: 'cyan lighten-2'
           },
           {
             name: 'Angular',
-            val: '40',
+            val: '55',
             color: 'red'
           },
           {
             name: 'Ruby on Rails',
-            val: '80',
+            val: '85',
             color: 'red darken-4'
           },
           {
@@ -614,17 +532,17 @@
           },
           {
             name: 'SQL',
-            val: '80',
+            val: '85',
             color: 'blue lighten-2'
           },
           {
             name: 'Ruby',
-            val: '75',
+            val: '80',
             color: 'red darken-2'
           },
           {
             name: 'JavaScript',
-            val: '85',
+            val: '95',
             color: 'yellow-accent-2'
           },
           {
@@ -644,7 +562,7 @@
           },
           {
             name: 'HTML/CSS3/SCSS',
-            val: '90',
+            val: '95',
             color: 'lime accent-3'
           }
         ],
@@ -694,7 +612,7 @@
 
 <style>
   .projects-wallpaper {
-    background: rgba(0, 0, 0, 0.65) url('../static/aboutWallpaper.png');
+    background: rgba(0, 0, 0, 0.65) url('../static/aboutWallpaper.webp');
     background-blend-mode: darken;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -702,9 +620,37 @@
     background-position: bottom -100px left 100px;
   }
 
+  #blog,
+  #projects {
+    box-shadow: 5px 5px 10px 10px rgba(24, 31, 37, 0.2);
+  }
+
+  .about-selfie {
+    box-shadow: 5px 5px 10px 10px rgba(0, 136, 255, 0.5);
+  }
+
+  .v-parallax__image {
+    opacity: 0.5 !important;
+  }
+
+  .skills-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 36px;
+  }
+
+  .skills-area {
+    margin-top: 36px;
+  }
+
+  .skills-display {
+    margin-top: 36px;
+  }
+
   @media only screen and (max-width: 768px) {
     .skills-area {
-      overflow: scroll;
+      margin-top: 24px;
     }
   }
 </style>
