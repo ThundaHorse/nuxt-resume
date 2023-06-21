@@ -15,7 +15,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "animejs": "^3.1.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^3.4.3",
     "vue-animejs": "^2.1.1"
   },
   "devDependencies": {
