@@ -50,7 +50,6 @@
       </v-row>
     </section>
 
-    <v-divider class="mx-4" />
     <v-btn
       v-scroll="onScroll"
       v-show="fab"
@@ -116,10 +115,6 @@
             <br />
             Currently, I am at StateFarm as a Software Engineer!
           </v-responsive>
-
-          <v-avatar class="mb-12 about-selfie" size="128">
-            <v-img :src="abeSelfie.src" :alt="abeSelfie.alt" />
-          </v-avatar>
 
           <div></div>
 
@@ -188,7 +183,7 @@
 
           <h2 class="display-2 mt-4 font-weight-bold mb-3">PROJECTS</h2>
 
-          <v-responsive class="mx-auto mb-12" width="56">
+          <v-responsive class="mx-auto mb-8" width="56">
             <v-divider class="mb-1" />
             <v-divider />
           </v-responsive>
@@ -367,47 +362,52 @@
     </section>
 
     <section id="stats">
-      <v-container class="skills-area text-center">
-        <v-row class="mx-auto">
-          <v-col cols="12">
-            <div class="skills-intro">
-              <div v-if="!isMobile">
-                <v-btn
-                  class="align-self-end"
-                  fab
-                  small
-                  outlined
-                  @click="$vuetify.goTo('#blog')"
+      <v-img
+        :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
+        src=""
+      >
+        <v-container class="skills-area text-center">
+          <v-row class="mx-auto">
+            <v-col cols="12">
+              <div class="skills-intro">
+                <div v-if="!isMobile">
+                  <v-btn
+                    class="align-self-end"
+                    fab
+                    small
+                    outlined
+                    @click="$vuetify.goTo('#blog')"
+                  >
+                    <v-icon>mdi-chevron-double-up</v-icon>
+                  </v-btn>
+                </div>
+                <h2
+                  class="display-2 font-weight-bold mt-3 mb-3 text-uppercase text-center"
                 >
-                  <v-icon>mdi-chevron-double-up</v-icon>
-                </v-btn>
+                  Skills
+                </h2>
               </div>
-              <h2
-                class="display-2 font-weight-bold mt-3 mb-3 text-uppercase text-center"
-              >
-                Skills
-              </h2>
-            </div>
-          </v-col>
-        </v-row>
+            </v-col>
+          </v-row>
 
-        <v-row class="mx-auto skills-display">
-          <v-col v-for="(tool, idx) of tools" :key="idx" cols="12" md="3">
-            <div class="text-center">
-              <v-progress-circular
-                :value="tool.val"
-                :color="tool.color"
-                size="70"
-                width="7"
-              />
-              <div
-                class="title font-weight-regular text-uppercase"
-                v-text="tool.name"
-              ></div>
-            </div>
-          </v-col>
-        </v-row>
-      </v-container>
+          <v-row class="mx-auto skills-display">
+            <v-col v-for="(tool, idx) of tools" :key="idx" cols="12" md="3">
+              <div class="text-center">
+                <v-progress-circular
+                  :value="tool.val"
+                  :color="tool.color"
+                  size="70"
+                  width="7"
+                />
+                <div
+                  class="title font-weight-regular text-uppercase"
+                  v-text="tool.name"
+                ></div>
+              </div>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-img>
     </section>
   </div>
 </template>
@@ -465,6 +465,13 @@
           }
         ],
         projects: [
+          {
+            name: 'Statefarm Search',
+            desc:
+              "Utilized Vue3 & Vite to restructure Statefarm's search UI. Terraform and AWS was utilized to move legacy backend to a modern cloud first approach. Assisted in planning and implementation of UI and setting up backend.",
+            url: 'https://search.c1.statefarm/',
+            src: require('@/static/redSearch.png')
+          },
           {
             name: 'Follow the Nerd',
             desc:
@@ -611,20 +618,6 @@
 </script>
 
 <style>
-  .projects-wallpaper {
-    background: rgba(0, 0, 0, 0.65) url('../static/aboutWallpaper.webp');
-    background-blend-mode: darken;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: bottom -100px left 100px;
-  }
-
-  #blog,
-  #projects {
-    box-shadow: 5px 5px 10px 10px rgba(24, 31, 37, 0.2);
-  }
-
   .about-selfie {
     box-shadow: 5px 5px 10px 10px rgba(0, 136, 255, 0.5);
   }
@@ -646,6 +639,59 @@
 
   .skills-display {
     margin-top: 36px;
+  }
+
+  #hero {
+    .v-responsive__content {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0px, #000000 100%);
+    }
+  }
+
+  #about-me {
+    .about-wallpaper {
+      align-items: center;
+
+      .v-responsive__content,
+      .v-image__image {
+        box-shadow: inset 4px 16px 15px 9px rgb(0 0 0 / 77%);
+      }
+    }
+  }
+
+  #projects {
+    .projects-wallpaper {
+      align-items: center;
+      background: rgb(0 0 0 / 90%) url('../static/aboutWallpaper.webp');
+      background-blend-mode: darken;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: bottom -100px left 100px;
+      box-shadow: inset 4px 16px 15px 9px rgb(0 0 0 / 77%);
+    }
+  }
+
+  #blog {
+    box-shadow: inset 0 0 0px 0px rgb(0 0 0 / 77%);
+
+    .v-image {
+      background-image: linear-gradient(
+        to bottom,
+        #000000e0 3px,
+        rgb(0 0 0 / 0%) 90%
+      );
+    }
+  }
+
+  #stats {
+    background-image: linear-gradient(
+      360deg,
+      #000000 -24px,
+      rgb(0 0 0 / 0%) 90%
+    );
+
+    .v-image {
+      align-items: center;
+    }
   }
 
   @media only screen and (max-width: 768px) {
