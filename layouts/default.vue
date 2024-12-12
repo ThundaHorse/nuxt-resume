@@ -1,12 +1,12 @@
 <template>
   <v-app dark>
     <!-- Content -->
-    <v-content id="main">
+    <v-main id="main">
       <!-- <v-container pa-0> -->
-      <v-content fill-height>
+      <v-main fill-height>
         <nuxt />
-      </v-content>
-    </v-content>
+      </v-main>
+    </v-main>
 
     <!-- Footer -->
     <Footer />
@@ -16,16 +16,16 @@
 <script>
   import Footer from '../components/layout-components/Footer.vue';
 
-export default {
-  name: 'default',
-  components: {
-    Footer
-  },
-  data() {
-    return {};
-  },
-  methods: {}
-};
+  export default {
+    name: 'default',
+    components: {
+      Footer
+    },
+    data() {
+      return {};
+    },
+    methods: {}
+  };
 </script>
 
 <style></style>

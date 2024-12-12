@@ -104,16 +104,22 @@
             Science.
             <br />
             I have always intruigued by software development and taught myself
-            Javascript and Ruby throughout my undergraduate studies, in 2019 I
-            decided to attend Actualize Coding Bootcamp in Chicago, IL to pursue
-            my passion.
+            Javascript and Ruby throughout my undergraduate studies.
+
+            <br />
+            <br />
+            In 2019 I decided to attend Actualize Coding Bootcamp in Chicago, IL
+            to pursue my passion.
+            <br />
             <br />
             When I am not immersing myself in best practices, or finding neat
             tricks to optimize my work you can often find me at the MMA gym
-            continuing my MMA training! Or if I'm feeling like relaxing, playing
-            guitar with my cat 🐱.
+            continuing my MMA training!
             <br />
-            Currently, I am at StateFarm as a Software Engineer!
+            <br />
+            With a full-stack background, navigation from back end to front end
+            comes naturally. I am constantly honing my skills so that any areas
+            of uncertainty can be remedied.
           </v-responsive>
 
           <div></div>
@@ -416,10 +422,6 @@
   export default {
     data() {
       return {
-        abeSelfie: {
-          src: require('@/static/abeBayern.webp'),
-          alt: 'Abe Selfie'
-        },
         wallpapers: {
           hero: {
             src: require('@/static/heroWallpaper.webp'),
@@ -430,11 +432,9 @@
             alt: 'About'
           },
           blog: {
-            // src: require(""),
             alt: 'Blog'
           },
           stats: {
-            // src: require(""),
             alt: 'Stats'
           }
         },
@@ -465,6 +465,13 @@
           }
         ],
         projects: [
+          {
+            name: 'Waximo',
+            desc:
+              'Freelance project for building a website for a startup focusing on an innovative, cost-effective, time-saving, all-in-one tool that simplifies the waxing process for you to spend less time maintaining your snowboard or ski equipment and more time on the slopes.',
+            url: 'https://waximo.com',
+            src: require('@/static/waximologo.png')
+          },
           {
             name: 'Statefarm Search',
             desc:
@@ -524,12 +531,12 @@
           },
           {
             name: 'Angular',
-            val: '55',
+            val: '75',
             color: 'red'
           },
           {
             name: 'Ruby on Rails',
-            val: '85',
+            val: '75',
             color: 'red darken-4'
           },
           {
@@ -554,7 +561,7 @@
           },
           {
             name: 'TypeScript',
-            val: '70',
+            val: '80',
             color: 'light-blue accent-3'
           },
           {
@@ -618,14 +625,6 @@
 </script>
 
 <style>
-  .about-selfie {
-    box-shadow: 5px 5px 10px 10px rgba(0, 136, 255, 0.5);
-  }
-
-  .v-parallax__image {
-    opacity: 0.5 !important;
-  }
-
   .skills-intro {
     display: flex;
     flex-direction: column;
