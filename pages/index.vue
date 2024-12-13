@@ -36,7 +36,7 @@
                 </v-col>
 
                 <v-btn
-                  class="align-self-end"
+                  class="align-self-end mt-8"
                   fab
                   outlined
                   @click="$vuetify.goTo('#about-me')"
@@ -468,7 +468,7 @@
           {
             name: 'Waximo',
             desc:
-              'Freelance project for building a website for a startup focusing on an innovative, cost-effective, time-saving, all-in-one tool that simplifies the waxing process for you to spend less time maintaining your snowboard or ski equipment and more time on the slopes.',
+              'Freelance project for building a website for a startup focusing on an innovative, cost-effective, time-saving, all-in-one tool that simplifies the waxing process for you to spend less time maintaining your snowboard or ski equipment and more time on the slopes. Built with NextJS + TypeScript, efficiently serves up a single page application with capabilities such as sign up, refer others, and a contact form without setting up a backend. In place of the backend, Google Sheets was used and scripts were made to send form data to Google Sheets where the data was recorded. Deployed via Netlify, hosting and environment variable management was streamlined and continuous deployments + NextJS build images ensure failures are known before going live.',
             url: 'https://waximo.com',
             src: require('@/static/waximologo.png')
           },
