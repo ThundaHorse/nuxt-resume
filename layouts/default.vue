@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <!-- Content -->
     <v-main id="main">
       <!-- <v-container pa-0> -->
@@ -28,4 +28,8 @@
   };
 </script>
 
-<style></style>
+<style>
+  .v-main {
+    background: black !important;
+  }
+</style>

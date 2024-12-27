@@ -6,7 +6,7 @@
           :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
           :src="wallpapers.hero.src"
         >
-          <v-theme-provider dark>
+          <v-theme-provider>
             <v-container fill-height>
               <v-row
                 align="center"
@@ -87,9 +87,9 @@
             </v-btn>
           </div>
 
-          <h2 class="display-2 mt-4 font-weight-bold mb-3">ABOUT ME</h2>
+          <h2 class="display-2 mt-8 font-weight-bold mb-2">ABOUT ME</h2>
 
-          <v-responsive class="mx-auto mb-8" width="56">
+          <v-responsive class="mx-auto mb-4" width="56">
             <v-divider class="mb-1" />
             <v-divider />
           </v-responsive>
@@ -152,7 +152,7 @@
 
           <v-btn
             v-if="!isMobile"
-            class="align-self-end"
+            class="align-self-end mt-8"
             fab
             outlined
             small
@@ -187,7 +187,7 @@
             </v-btn>
           </div>
 
-          <h2 class="display-2 mt-4 font-weight-bold mb-3">PROJECTS</h2>
+          <h2 class="display-2 mt-8 font-weight-bold mb-3">PROJECTS</h2>
 
           <v-responsive class="mx-auto mb-8" width="56">
             <v-divider class="mb-1" />
@@ -287,8 +287,9 @@
       <v-img
         :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
         src=""
+        class="blog-wallpaper"
       >
-        <div class="py-6"></div>
+        <div class="py-12"></div>
 
         <v-container class="text-center">
           <div v-if="!isMobile">
@@ -304,7 +305,7 @@
           </div>
 
           <h2
-            class="display-2 mt-4 font-weight-bold mb-3 text-uppercase text-center"
+            class="display-2 mt-8 font-weight-bold mb-3 text-uppercase text-center"
           >
             Blog
           </h2>
@@ -353,7 +354,7 @@
 
           <v-btn
             v-if="!isMobile"
-            class="align-self-end"
+            class="align-self-end mt-8"
             fab
             small
             outlined
@@ -371,6 +372,7 @@
       <v-img
         :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
         src=""
+        class="stats-wallpaper"
       >
         <v-container class="skills-area text-center">
           <v-row class="mx-auto">
@@ -388,7 +390,7 @@
                   </v-btn>
                 </div>
                 <h2
-                  class="display-2 font-weight-bold mt-3 mb-3 text-uppercase text-center"
+                  class="display-2 font-weight-bold mt-8 mb-3 text-uppercase text-center"
                 >
                   Skills
                 </h2>
@@ -424,11 +426,11 @@
       return {
         wallpapers: {
           hero: {
-            src: require('@/static/heroWallpaper.webp'),
+            src: require('@/static/about-wallpaper.webp'),
             alt: 'Hero'
           },
           about: {
-            src: require('@/static/about-wall.webp'),
+            src: require('@/static/hero-section-wallpaper.webp'),
             alt: 'About'
           },
           blog: {
@@ -465,6 +467,13 @@
           }
         ],
         projects: [
+          {
+            name: 'Young & Company ',
+            desc:
+              'Freelance project which entailed building a efficient and SEO friendly website for tax accountant. Achieved with Vite + React.js as well as Tailwind CSS in conjunction with Flowbite. Decision to utilize Flowbite was influenced by most components being open source and repretoire of advanced components. Vite was utilized due to its nature of being an independent tool for building and bundling. Vite significantly outperformed Webpack and useage of its inherit ES Module imports was a learning curve but delivered an efficient website and weighed in on design patterns and overall layout.',
+            url: 'https://youngcotax.com',
+            src: require('@/static/youngcotax.webp')
+          },
           {
             name: 'Waximo',
             desc:
@@ -625,6 +634,9 @@
 </script>
 
 <style>
+  main {
+    background-color: black;
+  }
   .skills-intro {
     display: flex;
     flex-direction: column;
@@ -642,54 +654,43 @@
 
   #hero {
     .v-responsive__content {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0px, #000000 100%);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 
   #about-me {
     .about-wallpaper {
       align-items: center;
-
-      .v-responsive__content,
-      .v-image__image {
-        box-shadow: inset 4px 16px 15px 9px rgb(0 0 0 / 77%);
-      }
     }
   }
 
   #projects {
     .projects-wallpaper {
       align-items: center;
-      background: rgb(0 0 0 / 90%) url('../static/aboutWallpaper.webp');
-      background-blend-mode: darken;
+      background: url('../static/hero-wallpaper-flipped.webp');
       background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: bottom -100px left 100px;
-      box-shadow: inset 4px 16px 15px 9px rgb(0 0 0 / 77%);
+      background-size: cover;
     }
   }
 
   #blog {
-    box-shadow: inset 0 0 0px 0px rgb(0 0 0 / 77%);
-
-    .v-image {
-      background-image: linear-gradient(
-        to bottom,
-        #000000e0 3px,
-        rgb(0 0 0 / 0%) 90%
-      );
+    .blog-wallpaper {
+      align-items: center;
+      background: url('../static/blog-wallpaper.webp');
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
 
   #stats {
-    background-image: linear-gradient(
-      360deg,
-      #000000 -24px,
-      rgb(0 0 0 / 0%) 90%
-    );
-
-    .v-image {
+    .stats-wallpaper {
       align-items: center;
+      background: url('../static/skills-wallpaper.webp');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 0px -75px;
     }
   }
 

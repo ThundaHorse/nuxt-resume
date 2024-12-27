@@ -26,3 +26,9 @@
     }
   };
 </script>
+
+<style>
+  .v-footer {
+    background-color: black !important;
+  }
+</style>
